@@ -7,7 +7,7 @@ RUN yum install -y httpd\
  unzip
 ADD  https://www.free-css.com/assets/files/free-css-templates/download/page279/jack-and-rose.zip /var/www/html/
 WORKDIR /var/www/html/
-RUN unzip webuild.zip
+RUN unzip jack-and-rose.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80 22
 

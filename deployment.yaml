@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: miss-simran
-          image: simrankaur4855/kubernetes-project
+          image: simrankaur4855/kubernetes-project:v1.5
           imagePullPolicy: Always
           ports:
             - containerPort: 80
