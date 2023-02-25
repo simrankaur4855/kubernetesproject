@@ -1,12 +1,15 @@
 FROM centos:latest
+RUN cd /etc/yum.repos.d/
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 RUN yum install -y httpd \
  zip \
  unzip
-ADD  https://www.free-css.com/assets/files/free-css-templates/download/page279/jack-and-rose.zip /var/www/html/
+ADD  https://www.free-css.com/assets/files/free-css-templates/download/page278/zezmon.zip /var/www/html/
 WORKDIR /var/www/html/
-RUN unzip jack-and-rose.zip
-RUN cp -rvf jack-and-rose.zip/* .
-RUN rm -rf jack-and-rose jack-and-rose.zip.zip
+RUN unzip  zezmon 
+RUN cp -rvf site/* .
+RUN rm -rf zezmon zezmon.1
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80 
 
@@ -17,10 +20,10 @@ EXPOSE 80
 #RUN yum install -y httpd\
  #zip\
  #unzip
-#ADD https://www.free-css.com/assets/files/free-css-templates/download/page278/zezmon.zip /var/www/html/
+#ADD https://www.free-css.com/assets/files/free-css-templates/download/page279/jack-and-rose.zip /var/www/html/
 #WORKDIR /var/www/html
-#RUN unzip webuild.zip
-#RUN cp -rvf webuild/* .
-#RUN rm -rf webuild webuild.zip
+#RUN unzip jack-and-rose.zip
+#RUN cp -rvf free-wedding-website-template/* .
+#RUN rm -rf jack-and-rose.zip
 #CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 #EXPOSE 80 22
