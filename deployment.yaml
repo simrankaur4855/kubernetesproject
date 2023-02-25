@@ -12,7 +12,7 @@ spec:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 1
-      
+
   template:
     metadata:
       labels:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: miss-simran
-          image: simrankaur4855/pipeline-demo
+          image: simrankaur4855/kubernetes-project
           imagePullPolicy: Always
           ports:
             - containerPort: 80
