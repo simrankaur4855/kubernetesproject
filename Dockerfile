@@ -9,7 +9,7 @@ ADD  https://www.free-css.com/assets/files/free-css-templates/download/page279/j
 WORKDIR /var/www/html/
 RUN unzip webuild.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80
+EXPOSE 80 22
 
 
 

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  miss-simran
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: miss-simran
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+      
+  template:
+    metadata:
+      labels:
+        app: miss-simran
+    spec:
+      containers:
+        - name: miss-simran
+          image: simrankaur4855/pipeline-demo
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
