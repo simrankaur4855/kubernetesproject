@@ -1,7 +1,15 @@
 - hosts: all
   become: true
   tasks:
-    - name: create new Deployment
-      command: kubectl apply -f /opt/deployment.yaml
-    - name: create new Service
-      command: kubectl apply -f /opt/service.yaml
+     - name: Delete Old Deployment
+       command: kubectl delete -f /opt/deployment.yaml
+
+     - name: Delete Old service
+       command: kubectl delete -f /opt/service.yaml
+
+     - name: create new Deployment
+       command: kubectl apply -f /opt/deployment.yaml
+    
+     - name: create new Service
+       command: kubectl apply -f /opt/service.yaml
+    
